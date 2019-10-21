@@ -82,7 +82,9 @@
                             <outlet property="delegate" destination="KHa-vD-Suc" id="ulG-iQ-hjs"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Transactions" id="cYb-hN-d1a"/>
+                    <tabBarItem key="tabBarItem" title="Transactions" image="dollarsign.circle" catalog="system" selectedImage="dollarsign.circle" id="cYb-hN-d1a">
+                        <color key="badgeColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Title" id="OKb-ij-Z6c"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hA-Hm-If7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -96,7 +98,20 @@
                     <view key="view" contentMode="scaleToFill" id="seP-Yv-Reo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98t-2V-f48">
+                                <rect key="frame" x="148" y="406" width="118" height="30"/>
+                                <state key="normal" title="Save Transaction"/>
+                                <connections>
+                                    <action selector="addTransactionButtonPressed:" destination="Gac-mL-fn0" eventType="touchUpInside" id="TTI-T2-miL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="98t-2V-f48" firstAttribute="centerX" secondItem="seP-Yv-Reo" secondAttribute="centerX" id="pKu-WQ-lvY"/>
+                            <constraint firstItem="98t-2V-f48" firstAttribute="centerY" secondItem="seP-Yv-Reo" secondAttribute="centerY" id="rLI-EZ-zbf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iZs-3a-hNr"/>
                     </view>
                     <navigationItem key="navigationItem" id="DYD-gq-wBz"/>
@@ -105,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="1674" y="147"/>
         </scene>
-        <!--Item-->
+        <!--Dashboard-->
         <scene sceneID="JLL-N8-7d3">
             <objects>
                 <viewController id="5Qd-ld-grI" customClass="DashboardViewController" customModule="Triplebyte" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,7 +150,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i2V-as-2Pt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Hx7-S0-Ccm"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="speedometer" catalog="system" selectedImage="speedometer" id="Hx7-S0-Ccm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVd-Ec-eNx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,7 +164,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UZY-PU-3Pk">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="KHa-vD-Suc" kind="relationship" relationship="viewControllers" id="TOS-2f-hwl"/>
@@ -161,4 +175,8 @@
             <point key="canvasLocation" x="52.173913043478265" y="150.66964285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dollarsign.circle" catalog="system" width="64" height="62"/>
+        <image name="speedometer" catalog="system" width="64" height="62"/>
+    </resources>
 </document>
