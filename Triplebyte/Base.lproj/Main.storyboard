@@ -23,6 +23,7 @@
                                     <barButtonItem key="rightBarButtonItem" title="Add" id="Sca-FJ-JhQ">
                                         <connections>
                                             <action selector="addButtonPressed:" destination="KHa-vD-Suc" id="hY4-xt-53D"/>
+                                            <segue destination="Gac-mL-fn0" kind="show" identifier="AddTransaction" id="qsY-gB-q9P"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
@@ -87,6 +88,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hA-Hm-If7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962.31884057971024" y="150.66964285714286"/>
+        </scene>
+        <!--Add Transaction View Controller-->
+        <scene sceneID="Nea-Cn-eT9">
+            <objects>
+                <viewController id="Gac-mL-fn0" customClass="AddTransactionViewController" customModule="Triplebyte" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="seP-Yv-Reo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="iZs-3a-hNr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DYD-gq-wBz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6K-cU-Z4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1674" y="147"/>
         </scene>
         <!--Item-->
         <scene sceneID="JLL-N8-7d3">
