@@ -91,11 +91,31 @@
         <!--Item-->
         <scene sceneID="JLL-N8-7d3">
             <objects>
-                <viewController id="5Qd-ld-grI" sceneMemberID="viewController">
+                <viewController id="5Qd-ld-grI" customClass="DashboardViewController" customModule="Triplebyte" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5wE-Vs-3ab">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gf-Iy-b00">
+                                <rect key="frame" x="186" y="198" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money spent on food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lj9-D0-HnJ">
+                                <rect key="frame" x="126" y="126" width="162" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lj9-D0-HnJ" firstAttribute="centerX" secondItem="5wE-Vs-3ab" secondAttribute="centerX" id="Gge-iH-ZjW"/>
+                            <constraint firstItem="3Gf-Iy-b00" firstAttribute="top" secondItem="lj9-D0-HnJ" secondAttribute="bottom" constant="51" id="mdu-gH-YdV"/>
+                            <constraint firstItem="lj9-D0-HnJ" firstAttribute="centerX" secondItem="3Gf-Iy-b00" secondAttribute="centerX" id="p42-0W-sA4"/>
+                            <constraint firstItem="lj9-D0-HnJ" firstAttribute="top" secondItem="i2V-as-2Pt" secondAttribute="top" constant="82" id="v20-Ng-ePm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="i2V-as-2Pt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Hx7-S0-Ccm"/>

@@ -15,6 +15,7 @@
 		3D1655EC234E831B00B1364D /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1655EB234E831B00B1364D /* TransactionsTableViewController.swift */; };
 		3D1655EE234E83D100B1364D /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1655ED234E83D100B1364D /* TransactionTableViewCell.swift */; };
 		3D1655F0234E854000B1364D /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1655EF234E854000B1364D /* Transaction.swift */; };
+		3DD2B7CD235E564A004784D9 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD2B7CC235E564A004784D9 /* DashboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3D1655EB234E831B00B1364D /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
 		3D1655ED234E83D100B1364D /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		3D1655EF234E854000B1364D /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		3DD2B7CC235E564A004784D9 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				3D1655D7234E808F00B1364D /* AppDelegate.swift */,
 				3D1655D9234E808F00B1364D /* SceneDelegate.swift */,
 				3D1655DD234E808F00B1364D /* Main.storyboard */,
+				3DD2B7CC235E564A004784D9 /* DashboardViewController.swift */,
 				3D1655EF234E854000B1364D /* Transaction.swift */,
 				3D1655EB234E831B00B1364D /* TransactionsTableViewController.swift */,
 				3D1655ED234E83D100B1364D /* TransactionTableViewCell.swift */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1655D8234E808F00B1364D /* AppDelegate.swift in Sources */,
+				3DD2B7CD235E564A004784D9 /* DashboardViewController.swift in Sources */,
 				3D1655DA234E808F00B1364D /* SceneDelegate.swift in Sources */,
 				3D1655EE234E83D100B1364D /* TransactionTableViewCell.swift in Sources */,
 				3D1655EC234E831B00B1364D /* TransactionsTableViewController.swift in Sources */,
