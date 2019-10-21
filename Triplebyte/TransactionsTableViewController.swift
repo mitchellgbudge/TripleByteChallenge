@@ -7,11 +7,19 @@
 //
 
 import UIKit
-import Foundation
 
 class TransactionsTableViewController: UITableViewController {
 
-    var transactionData: [Transaction] = [Transaction(location: "Dinner at Momo's", date: "7/28/17", amount: 15.35, category: .food), Transaction(location: "Lunch at Pete's", date: "8/5/17", amount: 17.25, category: .food), Transaction(location: "Whole Foods", date: "7/29/17", amount: 22.50, category: .groceries)]
+    var transactionData: [Transaction] = [Transaction(location: "Dinner at Momo's", amount: 15.35, category: .food),
+                                            Transaction(location: "Lunch at Pete's", amount: 17.25, category: .food),
+                                            Transaction(location: "Whole Foods", amount: 22.50, category: .groceries),
+                                            Transaction(location: "Safeway", amount: 60.50, category: .groceries),
+                                            Transaction(location: "Safeway", amount: 9.50, category: .groceries),
+                                            Transaction(location: "Uber", amount: 22.50, category: .transportation)]
+    
+    var foodData: [Transaction] = []
+    var groceriesData: [Transaction] = []
+    var transportationData: [Transaction] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +27,8 @@ class TransactionsTableViewController: UITableViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        let newTransaction = Transaction(location: "Safeway", date: "7/31/17", amount: 60.50, category: .groceries)
-        transactionData.append(newTransaction)
         self.tableView.reloadData()
     }
-    
-    // MARK: - Amount Formatter
-
 
     // MARK: - Table view data source
 
@@ -34,23 +37,57 @@ class TransactionsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Header \(section)"
+        var header = ""
+        switch section {
+        case 0: header = "Food"
+        case 1: header = "Groceries"
+        case 2: header = "Transportation"
+        default: break
+        }
+        return header
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transactionData.count
+        var filteredData: [Transaction] = []
+        switch section {
+        case 0:
+            filteredData = transactionData.filter { $0.category == .food }
+            foodData = filteredData
+        case 1:
+            filteredData = transactionData.filter { $0.category == .groceries }
+            groceriesData = filteredData
+        case 2:
+            filteredData = transactionData.filter { $0.category == .transportation }
+            transportationData = filteredData
+        default:
+            break
+        }
+        return filteredData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath) as! TransactionTableViewCell
-        let transaction = transactionData[indexPath.row]
-        cell.locationLabel.text = transaction.location
-        cell.dateLabel.text = transaction.date
-        
         let amountFormatter = NumberFormatter()
         amountFormatter.numberStyle = .currency
         amountFormatter.locale = Locale.current
-        cell.amountLabel.text = amountFormatter.string(for: transaction.amount)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        switch indexPath.section {
+        case 0:
+            cell.locationLabel.text = foodData[indexPath.row].location
+            cell.amountLabel.text = amountFormatter.string(for: foodData[indexPath.row].amount)
+            cell.dateLabel.text = dateFormatter.string(from: foodData[indexPath.row].date)
+        case 1:
+            cell.locationLabel.text = groceriesData[indexPath.row].location
+            cell.amountLabel.text = amountFormatter.string(for: groceriesData[indexPath.row].amount)
+            cell.dateLabel.text = dateFormatter.string(from: groceriesData[indexPath.row].date)
+        case 2:
+            cell.locationLabel.text = transportationData[indexPath.row].location
+            cell.amountLabel.text = amountFormatter.string(for: transportationData[indexPath.row].amount)
+            cell.dateLabel.text = dateFormatter.string(from: transportationData[indexPath.row].date)
+        default:
+            break
+        }
         return cell
     }
 

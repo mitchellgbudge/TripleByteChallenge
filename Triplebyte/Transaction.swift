@@ -11,7 +11,7 @@ import Foundation
 struct Transaction {
     
     let location: String
-    let date: String
+    let date: Date = Date()
     let amount: Double
     let category: SpendingCategory
 }
